@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
+import reducer, { initialState } from './store/reducer';
+import { StateProvider } from './store/StateProvider';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+    <StateProvider initialState={initialState} reducer={reducer} >
+      <App />
+    </StateProvider>
+    
     <div className="link">
       Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </div>
